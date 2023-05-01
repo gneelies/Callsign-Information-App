@@ -130,36 +130,34 @@ def search_callsign_avl():
         if len(resp_JSON) == 0:
             messagebox.showinfo("INFO","Callsign Not Available")
 
-        for info in resp_JSON:
-
-            status          = resp_JSON['status']
-            privileges      = resp_JSON['class']
-            expires         = resp_JSON['expires']
-            name            = resp_JSON['name']
-            address         = resp_JSON['addr1']
-            city            = resp_JSON['addr2']
-            state           = resp_JSON['state']
-            zip             = resp_JSON['zip']
-            country         = resp_JSON['country']
-                        
-            result_box_status.insert(END, f"{status:^6s}")
-            result_box_status.insert(END,"\n")
-            result_box_privileges.insert(END, f"{privileges:<8s}")
-            result_box_privileges.insert(END,"\n")
-            result_box_expires.insert(END, f"{expires:<8s}")
-            result_box_expires.insert(END,"\n")
-            result_box_name.insert(END, f"{name:<8s}")
-            result_box_name.insert(END,"\n")
-            result_box_address.insert(END, f"{address:<8s}")
-            result_box_address.insert(END,"\n")
-            result_box_city.insert(END, f"{city:<8s}")
-            result_box_city.insert(END,"\n")
-            result_box_state.insert(END, f"{state:<8s}")
-            result_box_state.insert(END,"\n")
-            result_box_zip.insert(END, f"{zip:<8s}")
-            result_box_zip.insert(END,"\n")
-            result_box_country.insert(END, f"{country:<8s}")
-            result_box_country.insert(END,"\n")
+        status          = resp_JSON['status']
+        privileges      = resp_JSON['class']
+        expires         = resp_JSON['expires']
+        name            = resp_JSON['name']
+        address         = resp_JSON['addr1']
+        city            = resp_JSON['addr2']
+        state           = resp_JSON['state']
+        zip             = resp_JSON['zip']
+        country         = resp_JSON['country']
+                    
+        result_box_status.insert(END, f"{status:^6s}")
+        result_box_status.insert(END,"\n")
+        result_box_privileges.insert(END, f"{privileges:<8s}")
+        result_box_privileges.insert(END,"\n")
+        result_box_expires.insert(END, f"{expires:<8s}")
+        result_box_expires.insert(END,"\n")
+        result_box_name.insert(END, f"{name:<8s}")
+        result_box_name.insert(END,"\n")
+        result_box_address.insert(END, f"{address:<8s}")
+        result_box_address.insert(END,"\n")
+        result_box_city.insert(END, f"{city:<8s}")
+        result_box_city.insert(END,"\n")
+        result_box_state.insert(END, f"{state:<8s}")
+        result_box_state.insert(END,"\n")
+        result_box_zip.insert(END, f"{zip:<8s}")
+        result_box_zip.insert(END,"\n")
+        result_box_country.insert(END, f"{country:<8s}")
+        result_box_country.insert(END,"\n")
             
     except KeyError as KE:
         messagebox.showerror("ERROR","No Available Info for Callsign")
